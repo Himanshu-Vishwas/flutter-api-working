@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
+import 'example_two.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -29,6 +30,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
         var data = jsonDecode(response.body.toString());
         print(data);
         print('account created successfully.');
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> ExampleTwo(),),);
+
       }else{
         print('failed');
       }
